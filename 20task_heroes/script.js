@@ -42,19 +42,7 @@ const renderTHs = (data) => {
     return tr
 }
 
-const createTable = async () => {
-    body.append(table);
-    table.append(thead);
-    table.append(tbody);
-    thead.append(renderTHs(dataTHs));
-
-    let heroes = await getList(`/heroes`);
-    heroes.forEach(item => renderTRs(item));
-}
-
-createTable()
-
-const renderTRs = (objData) => {
+const renderTbody = (objData) => {
     const tr = document.createElement(`tr`);
 
     tr.innerHTML = `<td>${objData.name}</td>
@@ -82,6 +70,18 @@ const renderTRs = (objData) => {
 
     checkFavor.addEventListener(`click`, async () => await changeItem(`/heroes/${objData.id}`, { favourite: checkFavor.checked }))
 }
+
+const createTable = async () => {
+    body.append(table);
+    table.append(thead);
+    table.append(tbody);
+    thead.append(renderTHs(dataTHs));
+
+    let heroes = await getList(`/heroes`);
+    heroes.forEach(item => renderTbody(item));
+}
+
+createTable()
 //---------renderTable---------
 
 //---------form---------
@@ -110,7 +110,7 @@ form.addEventListener(`submit`, async (e) => {
     }
 
     let addHero = await addItem(`/heroes`, newHero)
-    renderTRs(addHero)
+    renderTbody(addHero)
 })
 //---------form---------
 
