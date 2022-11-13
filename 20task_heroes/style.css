@@ -1,0 +1,43 @@
+body {
+    display: flex;
+    justify-content: space-between;
+    padding: 50px;
+    max-width: 800px;
+}
+
+table, td, th{
+    border-collapse: collapse;
+    padding: 10px;
+    border: 1px solid black;
+    font-size: 20px;
+}
+
+form {
+    padding: 20px;
+    border: 1px solid black;
+}
+
+form > label {
+    display: block;
+    font-size: 20px;
+    color: #000000;
+    font-weight: 400;
+    margin-bottom: 14px;
+    font-family: 'Roboto', sans-serif;
+}
+.btn {
+    width: 200px;
+    height: 50px;
+    border-radius: 8px;
+    border: 1 solid #e6e6e6;
+    font-size: 24px;
+    color: #808080;
+    font-weight: 400;
+    text-align: center;
+    cursor: pointer;
+    padding: 10px;
+}
+input {
+    margin: 0;
+    margin-left: 10px;
+}
