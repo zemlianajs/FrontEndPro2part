@@ -1,0 +1,44 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin:0
+  }
+
+.slide__container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+}
+
+.text {
+    font-size: 15px;
+    font-weight: 500;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    text-align: center;
+}
+.tesla {
+    width: 100%;
+}
+
+.color-picker{
+    margin: 0px 10px 60px 10px;
+    text-align: center;
+}
+
+.btn {
+    cursor: pointer;
+    height: 35px;
+    width: 25px;
+    margin: 1px 2px;
+    /* background-color: #bbb; */
+    border-radius: 2px;
+    display: inline-block;
+    transition: box-shadow 0.6s ease;
+}
+
+.active, .btn:hover {    
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08), 0 3px 6px rgba(0, 0, 0, 0.15);
+    margin-bottom: 1px;    
+}
+  
