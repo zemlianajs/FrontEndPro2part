@@ -34,7 +34,9 @@ const renderCars = data => {
                 $(imgCar)
                     .attr(`src`, `https://mc-astro.github.io/tesla-roadster-colors/img/${item.img}.jpg`)
                     .attr(`alt`, `tesla ${item.img}`);
-                $(`.text`).css('color', `${item.color}`).html(`${item.title}`)  
+                $(title)
+                    .css('color', `${item.color}`)
+                    .html(`${item.title}`)  
             })         
     })
 }
