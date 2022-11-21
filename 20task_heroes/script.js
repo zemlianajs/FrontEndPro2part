@@ -1,6 +1,3 @@
-const table = document.createElement('table');
-const thead = document.createElement('thead');
-const tbody = document.createElement('tbody');
 const body = document.querySelector("body");
 const form = document.querySelector(`#form`);
 const nameHero = document.querySelector(`#nameHero`);
@@ -56,7 +53,8 @@ const renderTbody = (objData) => {
     const tdBtn = document.createElement(`td`);
     const btn = document.createElement(`button`);
     btn.innerHTML = `Delete`;
-
+    
+    const tbody = document.querySelector(`tbody`);
     tbody.append(tr);
     tr.append(tdBtn);
     tdBtn.append(btn);
@@ -72,17 +70,22 @@ const renderTbody = (objData) => {
 }
 
 const createTable = async () => {
-    body.append(table);
-    table.append(thead);
-    table.append(tbody);
+    const table = document.createElement('table');
+    const thead = document.createElement('thead');
+    const tbody = document.createElement('tbody');
     thead.append(renderTHs(dataTHs));
+    table.append(thead);
+    table.append(tbody);    
+    body.append(table);
+}
+createTable();
+//---------renderTable---------
 
+const renderHeroes = async () => {
     let heroes = await getList(`/heroes`);
     heroes.forEach(item => renderTbody(item));
 }
-
-createTable()
-//---------renderTable---------
+renderHeroes();
 
 //---------form---------
 const renderFormComics = async () => {
