@@ -7,7 +7,7 @@ import { getList, changeItem } from "../../services/contactsServise";
 
 export default function ContactsTable() {
     const [contacts, setContacts] = useState([]);
-    const [newValue, setNewValue] = useState({
+    const [newValue, setNewValue] = useState({ // створила нову змінну, хоча розумію що не треба
         name: ` `,
         surname: ` `,
         married: false
@@ -19,6 +19,7 @@ export default function ContactsTable() {
         })();
     }, []);
 
+//тут додаю в нову змінну значення, але не розумію як ці значення оновити в contacts
     const modifyContact = (key, value) => {
         setNewValue((prevState => ({...prevState, [key]: value})))
     }
